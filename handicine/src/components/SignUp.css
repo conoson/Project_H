@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box; /* 패딩을 포함하여 높이 계산 */
-  background-image: url('../images/backgroundImg2.jpg'); /* 이미지 경로에 맞게 수정 */
+  background-image: url('../images/backgroundImg.jpg'); /* 이미지 경로에 맞게 수정 */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* 배경 이미지를 고정하여 스크롤에도 그대로 유지 */

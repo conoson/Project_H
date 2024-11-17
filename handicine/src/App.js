@@ -13,6 +13,7 @@ import Input from './components/Input';
 import SearchMedicine from './components/SearchMedicine';
 import QnAUpdate from './components/QnAUpdate';
 import Mypage from './components/Mypage';
+import Pharmacy from './components/Pharmacy';
 import { useState, useEffect } from 'react';
 import BoardUpdate from './components/BoardUpdate';
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/qna/update/:qnaId" element={<QnAUpdate/>} />
           <Route path="/board/update/:postId" element={<BoardUpdate/>} />
           <Route path="/searchMedicine/:medicineName" element={<SearchMedicine />} />
+          <Route path="/pharmacy" element={<Pharmacy />} />
         </Routes>
       </div>
     </Router>

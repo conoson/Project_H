@@ -1,0 +1,70 @@
+#map {
+    height: calc(100vh - 56px); /* 화면 높이 전체 */
+    width: 100vw; /* 화면 너비 전체 */
+    margin-top: 56px; /* 내비바 높이 */
+}
+  
+
+.pharmacy-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 20px 0;
+    border: 2px solid #00796B;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pharmacy-info {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.pharmacy-info h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.pharmacy-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pharmacy-info li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pharmacy-info li:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+.pharmacy-name {
+    font-weight: bold;
+    color: #00796B;
+}
+
+.pharmacy-status {
+    font-size: 0.9rem;
+    color: #555;
+}

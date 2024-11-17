@@ -5,7 +5,7 @@
     justify-content: center;
     text-align: center;
     height: calc(100vh - 56px); /* 내비바 높이 제외 */
-    background-image: url('../images/backgroundImg2.jpg');
+    background-image: url('../images/backgroundImg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -30,17 +30,17 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 30px; /* 제목과 검색창 간의 여백 */
+    margin-bottom: 340px; /* 제목과 검색창 간의 여백 */
 }
 
 .form-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .form-container .form-control {
-    height: 60px; /* 조정 필요 */
+    height: 80px; /* 조정 필요 */
     border-radius: 30px; /* 둥근 모서리 */
     padding: 0 20px; /* 여백 조정 */
     font-size: 2rem;
@@ -88,7 +88,7 @@ p {
 }
 
 button[type="submit"] {
-    background: linear-gradient(135deg, #83C9E7, #00A3E0);
+    background: linear-gradient(135deg, #4aadd8, #00A3E0);
     color: white;
     font-size: 1.5rem;
     border: none;
