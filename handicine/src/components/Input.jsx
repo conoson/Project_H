@@ -43,7 +43,7 @@ const Input = () => {
       updatedAt: new Date(),
     };
     // 선택한 게시판에 따른 API 엔드포인트 설정
-    const apiEndpoint = boardType === "qna" ? "http://localhost:8080/api/qna" : "http://localhost:8080/api/board";
+    const apiEndpoint = boardType === "qna" ? `${process.env.REACT_APP_API_URL}/api/qna` : `${process.env.REACT_APP_API_URL}/api/board`;
     console.log(apiEndpoint);
     try {
       const response = await fetch(apiEndpoint, {

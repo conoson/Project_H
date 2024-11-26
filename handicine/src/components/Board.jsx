@@ -13,7 +13,7 @@ const Board = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/board');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/board`);
         const data = await response.json();
         setQuestions(data);
       } catch (error) {
@@ -24,7 +24,7 @@ const Board = () => {
   }, []);
   const handleWriteClick = () => {
     const userToken = localStorage.getItem('token');
-    if(userToken){
+    if (userToken) {
       navigate('/Input', { state: { from: 'board' } });
     }
     else {
@@ -42,7 +42,7 @@ const Board = () => {
   return (
     <div className="qna-page">
       <hr />
-      <h1 className='page-title' style={{ color: "black" ,marginLeft:"650px"}}>자유 게시판</h1>
+      <h1 className='page-title' style={{ color: "black", marginLeft: "650px" }}>자유 게시판</h1>
       <div className="container-box">
         <Table striped bordered hover responsive className="qna-table">
           <thead>

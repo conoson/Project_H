@@ -18,7 +18,7 @@ const BoardDetail = () => {
   useEffect(() => {
     const fetchPostDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/board/${postId}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/board/${postId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch post');
         }
@@ -32,7 +32,7 @@ const BoardDetail = () => {
 
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/board/${postId}/comments`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/board/${postId}/comments`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -65,7 +65,7 @@ const BoardDetail = () => {
       authorUsername: userId,
     };
     try {
-      const response = await axios.post(`http://localhost:8080/api/board/${postId}/comments`, commentData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/board/${postId}/comments`, commentData, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -79,7 +79,7 @@ const BoardDetail = () => {
 
   const handleUpdateComment = async (commentId, updatedContent) => {
     try {
-      const response = await axios.patch(`http://localhost:8080/api/board/${postId}/comments/${commentId}`, {
+      const response = await axios.patch(`${process.env.REACT_APP_API_URL}/api/board/${postId}/comments/${commentId}`, {
         content: updatedContent
       }, {
         headers: {
@@ -98,7 +98,7 @@ const BoardDetail = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/board/${postId}/comments/${commentId}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/board/${postId}/comments/${commentId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

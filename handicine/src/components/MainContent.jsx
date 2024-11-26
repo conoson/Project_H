@@ -13,7 +13,7 @@ const MainContent = () => {
     e.preventDefault();
     console.log("약품 이름:", medicineName); // 추가된 로그
     try {
-      const response = await axios.get("http://localhost:8080/api/medicines/search", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/medicines/search`, {
         params: { itemName: medicineName }
       });
       console.log(response);

@@ -108,7 +108,7 @@ const SearchMedicine = () => {
     }
   }, [medicineName]);
   const fetchMedicines = async (itemName) => {
-    const url = "http://localhost:8080/api/medicines/search";
+    const url = `${process.env.REACT_APP_API_URL}/api/medicines/search`;
     try {
       const response = await axios.get(url, {
         params: { itemName }

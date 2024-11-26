@@ -13,7 +13,7 @@ const QnAUpdate = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/qna/${qnaId}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/qna/${qnaId}`);
         const qna = response.data;
         setTitle(qna.title);
         setContent(qna.content);
@@ -38,7 +38,7 @@ const QnAUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:8080/api/qna/${qnaId}`, { title, content });
+      await axios.patch(`${process.env.REACT_APP_API_URL}/api/qna/${qnaId}`, { title, content });
       navigate('/qna'); 
     } catch (error) {
       console.error("Error updating post:", error);
@@ -54,7 +54,7 @@ const QnAUpdate = () => {
           return;
         }
   
-        const response = await axios.delete(`http://localhost:8080/api/qna/${qnaId}`, {
+        const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/qna/${qnaId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

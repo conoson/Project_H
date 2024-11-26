@@ -13,7 +13,7 @@ const BoardUpdate = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/board/${postId}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/board/${postId}`);
         const post = response.data;
         setTitle(post.title);
         setContent(post.content);
@@ -39,7 +39,7 @@ const BoardUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:8080/api/board/${postId}`, { title, content });
+      await axios.patch(`${process.env.REACT_APP_API_URL}/api/board/${postId}`, { title, content });
       navigate('/board'); 
     } catch (error) {
       console.error("Error updating post:", error);
@@ -55,7 +55,7 @@ const BoardUpdate = () => {
           return;
         }
   
-        const response = await axios.delete(`http://localhost:8080/api/board/${postId}`, {
+        const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/board/${postId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

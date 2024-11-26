@@ -74,7 +74,7 @@ export default function Mypage({setIsLoggedIn}) {
       return;
     }
     // 토큰을 사용해 사용자 프로필 정보 가져오기
-    fetch(`http://localhost:8080/api/users/profile`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -104,7 +104,7 @@ export default function Mypage({setIsLoggedIn}) {
       role_name: selectedRole  // 선택된 역할 값 추가
     };
     console.log('보낼 데이터:', data);  // 전송할 데이터 확인
-    fetch(`http://localhost:8080/api/users/profile`, {  // user_id 경로 없이 토큰으로 처리
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile`, {  // user_id 경로 없이 토큰으로 처리
       method: 'PATCH',  // PATCH 메서드 사용
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -131,7 +131,7 @@ export default function Mypage({setIsLoggedIn}) {
     }
     // Confirm with the user before proceeding with deletion
     if (window.confirm('정말로 계정을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.')) {
-      fetch(`http://localhost:8080/api/users/${userId}`, {
+      fetch(`${process.env.REACT_APP_API_URL}/api/users/${userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

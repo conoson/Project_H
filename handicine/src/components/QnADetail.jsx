@@ -18,7 +18,7 @@ const QnADetail = () => {
   useEffect(() => {
     const fetchPostDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/qna/${qnaId}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/qna/${qnaId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch post');
         }
@@ -32,7 +32,7 @@ const QnADetail = () => {
 
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/qna/${qnaId}/answers`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/qna/${qnaId}/answers`, {
           headers: {
             'Authorization': `Bearer ${userToken}`
           }
@@ -70,7 +70,7 @@ const QnADetail = () => {
         authorUsername: userId,
       };
       try {
-        const response = await axios.post(`http://localhost:8080/api/qna/${question_id}/answers`, commentData, {
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/qna/${question_id}/answers`, commentData, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -100,7 +100,7 @@ const QnADetail = () => {
 
   const handleUpdateComment = async (commentId, editedCommentContent) => {
     try {
-      const response = await axios.patch(`http://localhost:8080/api/qna/answers/${commentId}`, {
+      const response = await axios.patch(`${process.env.REACT_APP_API_URL}/api/qna/answers/${commentId}`, {
         content: editedCommentContent
       }, {
         headers: {
@@ -120,7 +120,7 @@ const QnADetail = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/qna/answers/${commentId}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/qna/answers/${commentId}`, {
         headers: {
           'Authorization': `Bearer ${userToken}`
         }
