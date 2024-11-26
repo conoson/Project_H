@@ -24,7 +24,6 @@ const Navibar = ({ isLoggedIn, setIsLoggedIn }) => {
           <Nav.Link as={Link} to="/qna">전문가 Q&A</Nav.Link>
           <Nav.Link as={Link} to="/board">자유 게시판</Nav.Link>
           <Nav.Link as={Link} to="/pharmacy">주변 약국 찾기</Nav.Link>
-          <Nav.Link as={Link} to="/disease">전염병 유행정보</Nav.Link>
           <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
         </Nav>
       </div>
